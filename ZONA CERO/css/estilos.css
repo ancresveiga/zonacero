@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma;
+    background-image: url(../images/istockphoto-1137952631-612x612.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cabecera {
+    width: 100%;
+    background-image: url(../images/1713199512844.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: right;
+    height: 200px;
+    position: relative;
+    z-index: 2;
+}
+
+/*El logo*/
+#logo {
+    background-image: url(../images/logo2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+/*Menú de navegación*/
+#menu_nav {
+    float: right;
+}
+
+#menu_nav ul {
+    list-style-type: none;
+    font-size: 18px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+#menu_nav ul li {
+    display: inline;
+    float: left;
+    text-transform: uppercase; /*Para poner en mayúsculas*/
+    text-align: center;
+
+}
+
+#menu_nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 26px;
+    margin-top: 140px;
+}
+
+#menu_nav ul li a:hover {
+    color: black;
+    background-color: #d1cabc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/*Estilos del menú responsive. Por defecto estará oculto*/
+#menu_responsive {
+    display: none;
+    background-image: url(../images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    /*Coordenadas para el posicionamiento*/
+    right: 0px;
+    top: 0px;
+}
+
+/*Contenido*/
+#contenido {
+    width: 80%;
+    margin: 60px 10%;
+    text-align: center;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #d1cabc;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 40px; 
+}
+
+.evento {
+    background-image: url(../images/1712855584184.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 668.5px;
+}
+
+button {
+    margin-top: 40px;
+    background-color: black;
+    color: #bd9746;
+    padding: 20px 40px;
+    border: 1px solid black; /* Corrección aquí */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button a {
+    color: #bd9746;
+    text-decoration: none;
+    font-family: "Madimi One";
+    font-weight: 400;
+    font-style: normal;
+}
+
+button:hover {
+    background-color: #282b30;
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 760px) {
+    h2 {
+        font-size: 35px;
+    }
+
+    /*Mostramos el menú responsive*/
+    #menu_responsive {
+        display: block;
+    }
+
+    /*Fijamos el menú en 100% de ancho y le quitamos float*/
+    #menu_nav {
+        width: 100%;
+        float: none;
+        padding-top: 60px;
+    }
+
+    /*Convertimos el menú en una lista de elementos hacia abajo*/
+    #menu_nav ul {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); /* Corrección aquí */
+        overflow: hidden;
+        background-color: #33363b;
+        max-height: 0px;
+        -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    #menu_nav ul li {
+        border-bottom: 1px solid #282b30;
+        float: none;
+    }
+
+    /*Quitamos el borde inferior del último elemento del menú*/
+    #menu_nav ul li:last-child {
+        border-bottom: 0px;
+    }
+
+    #menu_nav ul li a {
+        padding: 15px 0px;
+        height: auto;
+        line-height: normal;
+    }
+
+    #menu_nav ul li a:hover {
+        background-color: #2a2d33;
+    }
+
+    /*Animación al desplegar el menú*/
+    #menu_nav ul.menu_nav_abierto {
+        max-height: 400px;
+        -webkit-transition: max-height 0.4s;
+        -moz-transition: max-height 0.4s;
+        -ms-transition: max-height 0.4s;
+        -o-transition: max-height 0.4s;
+        transition: max-height 0.4s;
+    }
+}
+/*Eventos*/
+#calendario {
+    font-family: Arial, sans-serif;
+    width: 300px; /* Ajusta el ancho del calendario según tus necesidades */
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mes-y-ano {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  #mes-anterior,
+  #mes-siguiente {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  #mes-actual {
+    margin: 0;
+  }
+  
+  #dias-semana {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dia-semana {
+    flex: 1;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+  }
+  
+  #dias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+  }
+  
+  .dia {
+    flex-basis: calc(100% / 7 - 10px); /* Ajusta el ancho de los días según tus necesidades */
+    text-align: center;
+    padding: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #d3c1b1;
+    font-weight: bold;
+  }
+  
+  #evento {
+    margin-top: 20px;
+  }
+  
+  #imagen-evento {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+/*Reservas*/
+.guardar {
+    color: #bd9746;
+    text-decoration: none;
+    font-family: "Madimi One";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+form {
+    width: 300px; /* Ancho del formulario */
+    margin: 20px;
+    margin-left: 40px;
+    margin-top: 55px;
+    float: left;
+    text-align: center;
+}
+label {
+    display: block; /* Mostrar etiquetas en bloques */
+    margin-bottom: 5px; /* Espacio entre etiquetas y campos */
+    font-size: 18px;
+    color: white;
+}
+input, select {
+    width: 100%; /* Ancho del campo de texto */
+    padding: 8px; /* Espacio dentro del campo de texto */
+    margin-bottom: 10px; /* Espacio entre campos */
+}
+#resultado_reserva {
+    width: 75%;
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+h3 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #d1cabc;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 5px; 
+    text-align: center;
+    margin-top: 40px;
+}
+#reservas {
+    font-size: 18px;
+    color: white;
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
